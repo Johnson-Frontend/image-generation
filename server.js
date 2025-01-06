@@ -34,7 +34,7 @@ app.post("/api/generate-image", async (req, res) => {
         model: "dall-e-2", // or "dall-e-3" for the latest version
         prompt: prompt,
         n: 1,
-        size: "200x200",
+        size: "256x256",
       },
       {
         headers: {
