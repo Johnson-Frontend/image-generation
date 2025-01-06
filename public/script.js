@@ -30,10 +30,12 @@ document.getElementById("image-form").addEventListener("submit", async (e) => {
         const link = document.createElement('a');
         link.href = data.url; // Use the image URL
         link.download = 'generated-image.png'; // Set the default file name
-        document.body.appendChild(link);
-        link.click();
+        link.target = '_self'; // Ensure the link behavior is controlled
+        document.body.appendChild(link); // Append the link to the DOM
+        link.click(); // Trigger the download
         document.body.removeChild(link); // Clean up
-      };
+    };
+    
     } catch (error) {
       // Handle network or other unexpected errors
       alert("Something went wrong. Please try again later.");
